@@ -13,4 +13,5 @@ import {delay, range, toArray} from "rxjs";
 export class ControlFlowComponent {
   public counter$ = inject(CounterService).counter$;
   public range$ = range(1, 8).pipe(toArray(), delay(2000));
+  public number = 2;
 }
