@@ -6,6 +6,7 @@
   }
 }
 
+<p #emptyState>
 <!-- Can no longer iterate over nullable lists... Must perform explicit if-check -->
 @if (range$ | async; as range) {
   @for (num of range; track num; let i = $index) {
@@ -20,4 +21,17 @@
   <div>{{item}}</div>
 } @empty {
   <div>Empty state...</div>
+}
+
+<!-- Switch cases also get revamped! -->
+@switch (1) {
+  @case (1) {
+    Uno!
+  }
+  @case (1) {
+    Dos!
+  }
+  @case (1) {
+    Tres!
+  }
 }
