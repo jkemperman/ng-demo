@@ -1,0 +1,22 @@
+@if (showAge) {
+  <div>I am {{age()}} years old</div>
+  <div>Next year, I will be {{nextAge()}} years old</div>
+}
+
+@if (showSummary) {
+  <p>To summarize:</p>
+  <ul>
+    <li>Lazy evaluation</li>
+    <li>Computed values are cached</li>
+    <li>Easy reactivity</li>
+    <li>Better change detection performance (in the future)</li>
+    <li>Still in preview, more to come! (e.g. 2-way binding, inputs as signals)</li>
+  </ul>
+}
+
+<div class="button-container">
+  <button (click)="showAge = true" [disabled]="showAge">Reveal age</button>
+  <button (click)="fastForward()">Fast forward 1 year...</button>
+  <button (click)="resetCurrentDate()">Bring me back to ye good ol' days!</button>
+  <button (click)="showSummary = true" [disabled]="showSummary">Takeaway points</button>
+</div>

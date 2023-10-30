@@ -1,0 +1,18 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.page__nav {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.page__nav, .page__main {
+  padding: 1rem;
+}
+
+.page__main {
+  flex: 1;
+}

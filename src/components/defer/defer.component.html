@@ -1,0 +1,13 @@
+@defer (when isVisible) {
+  <div>Deferred content</div>
+
+  @defer (on timer(1000)) {
+    <div>Timer triggered in nested defer!</div>
+  }
+}
+
+<button #button (click)="isVisible = true">Show deferred view</button>
+
+@defer (on hover(button)) {
+  <div>Super complicated and slow to render tooltip goes here</div>
+}

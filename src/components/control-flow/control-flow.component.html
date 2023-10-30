@@ -1,0 +1,23 @@
+@if (counter$ | async; as counter) {
+  @if (counter % 2 === 0) {
+    <div>{{counter}} is even!</div>
+  } @else {
+    <div>{{counter}} is odd!</div>
+  }
+}
+
+<!-- Can no longer iterate over nullable lists... Must perform explicit if-check -->
+@if (range$ | async; as range) {
+  @for (num of range; track num; let i = $index) {
+    <div>Number {{num}} is at index {{i}}</div>
+  }
+} @else {
+  <div>No value emitted yet...</div>
+}
+
+<!-- You can now use array / object literals in templates! -->
+@for (item of []; track item) {
+  <div>{{item}}</div>
+} @empty {
+  <div>Empty state...</div>
+}
